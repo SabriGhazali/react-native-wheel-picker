@@ -12,10 +12,17 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
     }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile "cn.aigestudio.wheelpicker:WheelPicker:1.1.3"
-    compile 'com.facebook.react:react-native:+'
+    implemantation fileTree(dir: 'libs', include: ['*.jar'])
+    implemantation "cn.aigestudio.wheelpicker:WheelPicker:1.1.3"
+    implemantation 'com.facebook.react:react-native:+'
 }
